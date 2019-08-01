@@ -1,11 +1,19 @@
 import * as types from "../actions/ActionTypes";
 
-const initialState = {};
+const todo = (state = [], action) => {
+  switch (action.type) {
+    case types.add:
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text
+        }
+      ];
 
-export default function todo(state = initialState, action) {
-  if (action.type === types.add) {
-    return state;
-  } else {
-    return state;
+    default:
+      return state;
   }
-}
+};
+
+export default todo;

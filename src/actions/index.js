@@ -1,7 +1,8 @@
 import * as types from "./ActionTypes";
 
-export function add() {
+export function add(text) {
   return {
-    type: types.add
+    type: types.add,
+    text
   };
 }
