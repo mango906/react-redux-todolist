@@ -6,3 +6,10 @@ export function add(text) {
     text
   };
 }
+
+export function del(index) {
+  return {
+    type: types.del,
+    index
+  };
+}

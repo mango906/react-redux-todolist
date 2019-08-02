@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { add } from "../actions";
+import { add, del } from "../actions";
 
 import TodoItem from "../components/TodoItem";
 import AddTodo from "../components/AddTodo";
@@ -14,7 +14,9 @@ class TodoList extends React.Component {
   render() {
     const { todos, store } = this.props;
 
-    const todoItem = todos.map((todo, i) => <TodoItem key={i} {...todo} />);
+    const todoItem = todos.map((todo, i) => (
+      <TodoItem key={i} {...todo} onDelete={index => store.dispatch(del(index))} />
+    ));
 
     return (
       <React.Fragment>

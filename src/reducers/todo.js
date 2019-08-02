@@ -6,11 +6,13 @@ const todo = (state = [], action) => {
       return [
         ...state,
         {
-          id: action.id,
+          id: state.length,
           text: action.text
         }
       ];
-
+    case types.del:
+      console.log(action);
+      return state.filter(el => el.id !== action.index);
     default:
       return state;
   }

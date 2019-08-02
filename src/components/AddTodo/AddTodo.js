@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddTodo = props => {
+const AddTodo = ({ addTodo }) => {
   const [text, setText] = React.useState("");
 
   const handleChange = e => {
@@ -8,7 +8,6 @@ const AddTodo = props => {
   };
 
   const handleClick = e => {
-    const { addTodo } = props;
     addTodo(text);
     setText("");
   };
